@@ -178,12 +178,18 @@ const cart_show = (pro_info, w_do ) => {
 product_box.forEach((e) => {
     e.addEventListener("click", (e) => {
 
-        if(e.target.classList.contains("cart_chose"))
+        if( e.target.classList.contains("cart_btn") || e.target.classList.contains("cart_chose"))
         {
             const pro_info = e.target.closest(".product_box").querySelector(".pro_info").textContent;
             const w_do = "cart"
             cart_show(pro_info,w_do);
         }
+
+        if(e.target.classList.contains("fa-heart"))
+            {
+                const heart = e.target.closest(".product_box").querySelector(".fa-heart");
+                heart.style.color = "red";
+            }
             
     })
     

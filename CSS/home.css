@@ -640,13 +640,13 @@ section
             border: none;
         }
 
-        .cart_btn 
+        /* .cart_btn 
         {
             padding: 0;
             background: none;
             font-weight: bold;
             border: none;
-        }
+        } */
 
         .product_box:hover .save 
         {
@@ -750,11 +750,11 @@ section
             background-color: #ff4603;
         }
 
-        .cart_chose 
+        /* .cart_chose 
         {
             width: 30px;
             line-height: 30px;
-        }
+        } */
     }
 
 }

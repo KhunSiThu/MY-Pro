@@ -5,7 +5,7 @@ import {
 
 import { 
     li1_show,li2_show,li3_show,other_filter,go_show,brands_show,
-    pu_show,mi_show,other_show,  
+    pu_show,mi_show,other_show,other_brand_show
 } from "./function.js";
 
 other_show();
@@ -30,11 +30,12 @@ li3_btn.forEach((e) => {
 
 brand_btn.forEach((e) => {
     e.addEventListener("click",() => {
-        monitor_brand_show();
+        other_brand_show();
     })
 })
 
 brand_icon.addEventListener("click",() => {
+    console.log("k")
     brands_show();
 });
 

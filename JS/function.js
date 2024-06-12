@@ -79,7 +79,7 @@ const product_show = (e1,e2) => {
                                     <div class="buy">
                                         <span>Price : <em>$${e2.price}</em></span>
                                         <button id="buy_now" class="b3 bg_change buy_btn">Buy Now</button>
-                                        <button class=" bg_change cart_btn"><i class="fa-solid fa-cart-shopping cart_chose b3"></i></button>
+                                        <button class=" bg_change cart_btn b3"><i class="fa-solid fa-cart-shopping cart_chose b3"></i></button>
                                         
                                     </div>
                                 </div>
@@ -361,12 +361,35 @@ const other_show = () => {
     all_show(other_product,other_filter);
 };
 
+const other_brand_show = () => {
+    go_btn.style.background = "";
+    other_product.innerHTML = ""
+    brand_btn.forEach((el) => {
+        if(el.checked === true)
+            {
+                const brand_filter = other_filter.filter(e => {return e.product === el.value});
+                brand_filter.forEach((e) => {
+                    product_show(other_product,e);
+                });
+                all_btn.checked = false;
+            }
+    })
+
+    if(brand_btn[0].checked == false && brand_btn[1].checked == false && brand_btn[2].checked == false && brand_btn[3].checked == false && brand_btn[4].checked == false
+        && brand_btn[5].checked == false && brand_btn[6].checked == false 
+    )
+        {
+            all_btn.checked = true;
+            other_show();
+        }
+}
+
 export 
 {
     product_show,hot_show,feat_show,hot_see_show,feat_see_show,next_scroll,back_scroll,
     pc_show,li1_show,li2_show,li3_show,laptops_show,motherboards_show,monitors_show,
     other_show,search_result_show,menu_show,pc_brand_show,brands_show,pu_show,mi_show,
     go_show,pc_filter,laptop_brand_show,laptops_filter,motherboards_filter,monitors_filter,
-    other_filter,motherboard_brand_show,monitor_brand_show,
+    other_filter,motherboard_brand_show,monitor_brand_show,other_brand_show
 
 }
